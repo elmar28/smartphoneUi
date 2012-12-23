@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>モーダルウィンドデモ</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+<meta name="format-detection" content="telephone=no, email=no">
+<link rel="apple-touch-icon" href="/touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="stylesheet" href="./src/css/style.css" media="all">
+<link rel="stylesheet" href="./src/css/pluginUi.css" media="all">
+<script src="./src/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="./src/js/overlay.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(window).bind('load',function(e){
+		$('body').addClass('visible');
+		var timer = setTimeout(function(){
+		    window.scrollTo(0, 1);
+		    clearTimeout(timer);
+		    timer = null;
+		}, 300);
+	});
+	//$('.btn_pop').overlay({setTouch:true,positionTop:30});
+})
+</script>
+<style>
+header{
+	padding:10px;
+	background-color:#cccccc;
+}
+
+#body{
+	padding:10px;
+}
+
+.dialogContent{
+	margin:0 15%;
+	position:absolute;
+	top:0;
+	left:0;
+	width:70%;
+	background:#ffffff;
+}
+
+figure img{
+	border:4px solid #999999;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+.dialogContent img{
+	width:100%;
+	vertical-align:bottom;
+}
+
+footer{
+	padding:10px;
+	text-align:center;
+	color:#ffffff;
+	background-color:#000000;
+}
+
+.mb10{
+	margin-bottom:10px;
+}
+
+.mb20{
+	margin-bottom:20px;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<header>
+		<h1>モーダルウィンドウ</h1>
+	</header>
+	<section id="body">
+		<figure class="mb10">
+			<a href="javascript:void(0)" class="btn_pop"><img src="./src/images/sample/img01_thum.jpg" width="85" alt=""></a>
+			<figcaption>サムネイル</figcaption>
+		</figure>
+		<p class="mb20">サムネイル画像をタッチしてください。</p>
+		<p class="mb20">本文が入ります。</p>
+		<p class="mb20">本文が入ります。</p>
+		<p class="mb20">本文が入ります。</p>
+		<p class="mb20">本文が入ります。</p>
+	</section>
+	<footer>
+		&copy demo
+	</footer>
+	<div class="dialog">
+		<div id="hitArea"></div>
+		<div class="dialogContent">
+			<img src="./src/images/sample/img01_main.jpg" alt="">
+		</div>
+	</div>
+</div>
+</body>
+</html>

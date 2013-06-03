@@ -2,9 +2,9 @@
 $(function(){
 	$('.btn_pop').each(function(){
 		var options={
-		    nodeDialog: '.dialog',
-		    nodeHitArea: '#hitArea',
-		    nodeMsg: '.dialogContent',
+			nodeDialog: '.dialog',
+			nodeHitArea: '#hitArea',
+			nodeMsg: '.dialogContent',
 			nodeConfirm:'.btnConfirm',
 			nolayer:false,
 			nodeEvent:'click',
@@ -22,7 +22,7 @@ $(function(){
 		var setTouch=options.setTouch;
 		var $btnConfirm=(options.nodeConfirm)?$(options.nodeConfirm):'';
 
-        $toggleOverlay.bind(triggerEvent,function(){
+		$toggleOverlay.bind(triggerEvent,function(){
 			if(!flagOverlay){
 				var setHeight=document.documentElement.scrollHeight;
 				var positionTop=options.positionTop?options.positionTop:160;
@@ -33,7 +33,7 @@ $(function(){
 					$hitArea.hide();
 				}
 
-			    flagOverlay=true;
+				flagOverlay=true;
 				$dialog.addClass('visible');
 				$hitArea.height(setHeight);
 
@@ -70,6 +70,6 @@ $(function(){
 				$(this).unbind('touchstart');
 				$hitArea.unbind('touchstart');
 			};
-	    });
+		});
 	});
 });
